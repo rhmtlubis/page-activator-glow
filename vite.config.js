@@ -8,7 +8,8 @@ export default defineConfig({
   // Configure the server
   server: {
     port: 8080,
-    open: true
+    open: true,
+    host: true
   },
   
   // Build options

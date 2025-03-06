@@ -1,26 +1,32 @@
 
 # Wedding Invitation
 
-A beautiful digital wedding invitation built with HTML, CSS, and JavaScript.
+This is a beautiful wedding invitation website for Selpia & Ernest.
+
+## Setup Instructions
+
+1. Place all files in your web server directory (e.g., htdocs, www)
+2. Add a `music.mp3` file to the root directory for background music
+3. Customize the content in `index.php` for your specific wedding details
+4. Access the website through your local server (e.g., http://localhost/wedding-invitation)
 
 ## Features
 
-- Responsive design
-- Interactive pages (Cover, Welcome, Couple, Event, Gallery, RSVP)
+- Beautiful animated wedding invitation
+- RSVP functionality
 - Countdown timer to the wedding date
-- RSVP form with PHP processing
-- Media gallery
-- Background music controls
+- Mobile-responsive design
+- Background music
 
-## Setup
+## Important Note for Lovable Users
 
-1. Clone the repository
-2. Open the project in your favorite code editor
-3. Run a local server to view the project
+When running this project with Lovable, add the following to your package.json file manually:
 
-## Technologies Used
+```json
+"scripts": {
+  "build:dev": "vite build --mode development",
+  "dev": "vite"
+}
+```
 
-- HTML5
-- CSS3
-- JavaScript
-- PHP (for RSVP form processing)
+This is necessary because Lovable requires the "build:dev" script to build the project.

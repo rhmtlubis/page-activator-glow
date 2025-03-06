@@ -1,3 +1,4 @@
+
 :root {
   --inv-bg: #e2e3df;
   --inv-base: #6d8789;
@@ -288,6 +289,7 @@ body {
   height: 100vh;
   position: relative;
   overflow: hidden;
+  margin: 0 auto;
 }
 
 .canvas.not-open .satumomen_track {

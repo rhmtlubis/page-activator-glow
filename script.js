@@ -3,13 +3,23 @@ function showPage(pageId) {
   document.querySelectorAll(".page").forEach((page) => {
     page.classList.remove("active")
   })
-  document.getElementById(pageId).classList.add("active")
-
-  // Update navigation
-  document.querySelectorAll(".nav-item").forEach((item) => {
-    item.classList.remove("active")
-  })
-  document.querySelector(`[data-page="${pageId}"]`).classList.add("active")
+  
+  const pageElement = document.getElementById(pageId)
+  if (pageElement) {
+    pageElement.classList.add("active")
+    
+    // Update navigation
+    document.querySelectorAll(".nav-item").forEach((item) => {
+      item.classList.remove("active")
+    })
+    
+    const navItem = document.querySelector(`[data-page="${pageId}"]`)
+    if (navItem) {
+      navItem.classList.add("active")
+    }
+  } else {
+    console.warn(`Page with ID "${pageId}" not found`)
+  }
 }
 
 // Initialize navigation
@@ -96,12 +106,13 @@ function toggleGallery() {
 
 // Initialize
 document.addEventListener("DOMContentLoaded", () => {
-  // Show cover page initially
-  showPage("cover")
-})
-
-// Wait for DOM to load
-document.addEventListener("DOMContentLoaded", () => {
+  // Check if cover page exists before showing it
+  if (document.getElementById("cover")) {
+    showPage("cover")
+  } else {
+    console.warn("Cover page not found")
+  }
+  
   // Hide loader after page loads
   setTimeout(() => {
     document.getElementById("loader").style.display = "none"
@@ -284,4 +295,3 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 })
-
